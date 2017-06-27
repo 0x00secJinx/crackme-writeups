@@ -1,0 +1,203 @@
+Bit Banging Challenge
+
+Original Post:
+	https://0x00sec.org/t/reverseme-bit-banging/2522
+
+Objective:
+	Find the key(s)
+
+The Challenge:
+	Binary:
+
+		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
+
+	Getting the executable:
+		Save the binary into a file (e.g textfile)
+		run the following command:
+			cat textfile | base64 -d | gunzip > bin && sudo chmod +x bin
+
+	Run the executable:
+		./bin
+
+
+Procedure:
+	First, I used objdump to get the assembly code of the executable: (Only needed parts are shown;My own comments added)
+		(If there are empty lines, the next description will account for those empty lines)
+
+	$ objdump -M intel -d ../archive/bit_banging_0x0
+
+	00000000004005f6 <main>:
+	  4005f6:	55                   	push   rbp							;
+	  4005f7:	48 89 e5             	mov    rbp,rsp 						;
+	  4005fa:	48 83 ec 20          	sub    rsp,0x20 					; create stack
+	  4005fe:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi 	;
+	  400601:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi 	;
+	  400605:	83 7d ec 02          	cmp    DWORD PTR [rbp-0x14],0x2 	; arg checking
+	  400609:	74 23                	je     40062e <main+0x38>			; Jump if the args are valid (line 94)
+	  40060b:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20] 	;
+	  40060f:	48 8b 00             	mov    rax,QWORD PTR [rax]  		;
+	  400612:	48 89 c6             	mov    rsi,rax 						;
+	  400615:	bf 54 08 40 00       	mov    edi,0x400854 				; ""
+	  40061a:	b8 00 00 00 00       	mov    eax,0x0 						;
+	  40061f:	e8 9c fe ff ff       	call   4004c0 <printf@plt> 			;
+	  400624:	bf 01 00 00 00       	mov    edi,0x1 						;
+	  400629:	e8 b2 fe ff ff       	call   4004e0 <exit@plt> 			; exit the program if incorrect args
+	  40062e:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20] 	; QWORD PTR [rbp-0x20] points to the key the user passes in
+	  400632:	48 83 c0 08          	add    rax,0x8
+	  400636:	48 8b 00             	mov    rax,QWORD PTR [rax]
+	  400639:	48 89 c7             	mov    rdi,rax
+	  40063c:	e8 6f fe ff ff       	call   4004b0 <strlen@plt>
+	  400641:	48 83 f8 04          	cmp    rax,0x4
+	  400645:	74 14                	je     40065b <main+0x65>
+	  400647:	bf 65 08 40 00       	mov    edi,0x400865
+	  40064c:	e8 4f fe ff ff       	call   4004a0 <puts@plt>
+	  400651:	bf 01 00 00 00       	mov    edi,0x1
+	  400656:	e8 85 fe ff ff       	call   4004e0 <exit@plt>
+	  40065b:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+	  400662:	eb 2c                	jmp    400690 <main+0x9a>
+	  400664:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20]
+	  400668:	48 83 c0 08          	add    rax,0x8
+	  40066c:	48 8b 10             	mov    rdx,QWORD PTR [rax]
+	  40066f:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+	  400672:	48 98                	cdqe
+	  400674:	48 01 d0             	add    rax,rdx
+	  400677:	0f b6 00             	movzx  eax,BYTE PTR [rax]
+	  40067a:	0f be c0             	movsx  eax,al
+	  40067d:	8d 50 d0             	lea    edx,[rax-0x30]
+	  400680:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+	  400683:	48 98                	cdqe
+	  400685:	89 14 85 60 10 60 00 	mov    DWORD PTR [rax*4+0x601060],edx
+	  40068c:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
+	  400690:	83 7d fc 03          	cmp    DWORD PTR [rbp-0x4],0x3
+	  400694:	7e ce                	jle    400664 <main+0x6e>
+	  400696:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+	  40069d:	eb 39                	jmp    4006d8 <main+0xe2>
+	  40069f:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+	  4006a2:	48 98                	cdqe
+	  4006a4:	8b 04 85 60 10 60 00 	mov    eax,DWORD PTR [rax*4+0x601060]
+	  4006ab:	85 c0                	test   eax,eax
+	  4006ad:	78 11                	js     4006c0 <main+0xca>
+	  4006af:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+	  4006b2:	48 98                	cdqe
+	  4006b4:	8b 04 85 60 10 60 00 	mov    eax,DWORD PTR [rax*4+0x601060]
+	  4006bb:	83 f8 09             	cmp    eax,0x9
+	  4006be:	7e 14                	jle    4006d4 <main+0xde>
+	  4006c0:	bf 73 08 40 00       	mov    edi,0x400873
+	  4006c5:	e8 d6 fd ff ff       	call   4004a0 <puts@plt>
+	  4006ca:	bf 01 00 00 00       	mov    edi,0x1
+	  4006cf:	e8 0c fe ff ff       	call   4004e0 <exit@plt>
+	  4006d4:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
+	  4006d8:	83 7d fc 03          	cmp    DWORD PTR [rbp-0x4],0x3
+	  4006dc:	7e c1                	jle    40069f <main+0xa9>
+	  4006de:	8b 05 7c 09 20 00    	mov    eax,DWORD PTR [rip+0x20097c]        # 601060 <array>
+	  4006e4:	83 f8 05             	cmp    eax,0x5
+	  4006e7:	0f 85 c9 00 00 00    	jne    4007b6 <main+0x1c0>
+	  4006ed:	8b 05 71 09 20 00    	mov    eax,DWORD PTR [rip+0x200971]        # 601064 <array+0x4>
+	  4006f3:	f7 d8                	neg    eax
+	  4006f5:	89 c2                	mov    edx,eax
+	  4006f7:	8b 05 67 09 20 00    	mov    eax,DWORD PTR [rip+0x200967]        # 601064 <array+0x4>
+	  4006fd:	83 c0 01             	add    eax,0x1
+	  400700:	21 d0                	and    eax,edx
+	  400702:	83 e0 04             	and    eax,0x4
+	  400705:	85 c0                	test   eax,eax
+	  400707:	0f 84 95 00 00 00    	je     4007a2 <main+0x1ac>
+	  40070d:	8b 05 55 09 20 00    	mov    eax,DWORD PTR [rip+0x200955]        # 601068 <array+0x8>
+	  400713:	83 f8 06             	cmp    eax,0x6
+	  400716:	74 76                	je     40078e <main+0x198>
+	  400718:	8b 05 4a 09 20 00    	mov    eax,DWORD PTR [rip+0x20094a]        # 601068 <array+0x8>
+	  40071e:	83 f8 05             	cmp    eax,0x5
+	  400721:	74 6b                	je     40078e <main+0x198>
+	  400723:	8b 05 3f 09 20 00    	mov    eax,DWORD PTR [rip+0x20093f]        # 601068 <array+0x8>
+	  400729:	f7 d8                	neg    eax
+	  40072b:	89 c2                	mov    edx,eax
+	  40072d:	8b 05 35 09 20 00    	mov    eax,DWORD PTR [rip+0x200935]        # 601068 <array+0x8>
+	  400733:	83 c0 01             	add    eax,0x1
+	  400736:	21 d0                	and    eax,edx
+	  400738:	83 e0 02             	and    eax,0x2
+	  40073b:	85 c0                	test   eax,eax
+	  40073d:	74 4f                	je     40078e <main+0x198>
+	  40073f:	8b 05 27 09 20 00    	mov    eax,DWORD PTR [rip+0x200927]        # 60106c <array+0xc>
+	  400745:	83 f8 08             	cmp    eax,0x8
+	  400748:	74 30                	je     40077a <main+0x184>
+	  40074a:	8b 05 1c 09 20 00    	mov    eax,DWORD PTR [rip+0x20091c]        # 60106c <array+0xc>
+	  400750:	f7 d8                	neg    eax
+	  400752:	89 c2                	mov    edx,eax
+	  400754:	8b 05 12 09 20 00    	mov    eax,DWORD PTR [rip+0x200912]        # 60106c <array+0xc>
+	  40075a:	83 c0 01             	add    eax,0x1
+	  40075d:	21 d0                	and    eax,edx
+	  40075f:	83 e0 08             	and    eax,0x8
+	  400762:	85 c0                	test   eax,eax
+	  400764:	74 14                	je     40077a <main+0x184>
+	  400766:	bf 8f 08 40 00       	mov    edi,0x40088f
+	  40076b:	e8 30 fd ff ff       	call   4004a0 <puts@plt>
+	  400770:	bf 00 00 00 00       	mov    edi,0x0
+	  400775:	e8 66 fd ff ff       	call   4004e0 <exit@plt>
+	  40077a:	bf 9d 08 40 00       	mov    edi,0x40089d
+	  40077f:	e8 1c fd ff ff       	call   4004a0 <puts@plt>
+	  400784:	bf 01 00 00 00       	mov    edi,0x1
+	  400789:	e8 52 fd ff ff       	call   4004e0 <exit@plt>
+	  40078e:	bf ab 08 40 00       	mov    edi,0x4008ab
+	  400793:	e8 08 fd ff ff       	call   4004a0 <puts@plt>
+	  400798:	bf 01 00 00 00       	mov    edi,0x1
+	  40079d:	e8 3e fd ff ff       	call   4004e0 <exit@plt>
+	  4007a2:	bf ab 08 40 00       	mov    edi,0x4008ab
+	  4007a7:	e8 f4 fc ff ff       	call   4004a0 <puts@plt>
+	  4007ac:	bf 01 00 00 00       	mov    edi,0x1
+	  4007b1:	e8 2a fd ff ff       	call   4004e0 <exit@plt>
+	  4007b6:	bf ab 08 40 00       	mov    edi,0x4008ab
+	  4007bb:	e8 e0 fc ff ff       	call   4004a0 <puts@plt>
+	  4007c0:	bf 01 00 00 00       	mov    edi,0x1
+	  4007c5:	e8 16 fd ff ff       	call   4004e0 <exit@plt>
+	  4007ca:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+	.rodata: (grabbed from objdump -s bit_banging_0x0)
+

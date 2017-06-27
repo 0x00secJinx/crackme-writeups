@@ -76,50 +76,50 @@ Procedure:
 	$ objdump -M intel -d ../archive/bit_banging_0x0
 
 	00000000004005f6 <main>:
-	  4005f6:	55                   	push   rbp							;
-	  4005f7:	48 89 e5             	mov    rbp,rsp 						;
-	  4005fa:	48 83 ec 20          	sub    rsp,0x20 					; create stack
-	  4005fe:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi 	;
-	  400601:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi 	;
-	  400605:	83 7d ec 02          	cmp    DWORD PTR [rbp-0x14],0x2 	; arg checking
-	  400609:	74 23                	je     40062e <main+0x38>			; Jump if the args are valid (line 94)
-	  40060b:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20] 	;
-	  40060f:	48 8b 00             	mov    rax,QWORD PTR [rax]  		;
-	  400612:	48 89 c6             	mov    rsi,rax 						;
-	  400615:	bf 54 08 40 00       	mov    edi,0x400854 				; ""
-	  40061a:	b8 00 00 00 00       	mov    eax,0x0 						;
-	  40061f:	e8 9c fe ff ff       	call   4004c0 <printf@plt> 			;
-	  400624:	bf 01 00 00 00       	mov    edi,0x1 						;
-	  400629:	e8 b2 fe ff ff       	call   4004e0 <exit@plt> 			; exit the program if incorrect args
-	  40062e:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20] 	; QWORD PTR [rbp-0x20] points to the key the user passes in
-	  400632:	48 83 c0 08          	add    rax,0x8
-	  400636:	48 8b 00             	mov    rax,QWORD PTR [rax]
-	  400639:	48 89 c7             	mov    rdi,rax
-	  40063c:	e8 6f fe ff ff       	call   4004b0 <strlen@plt>
-	  400641:	48 83 f8 04          	cmp    rax,0x4
-	  400645:	74 14                	je     40065b <main+0x65>
-	  400647:	bf 65 08 40 00       	mov    edi,0x400865
-	  40064c:	e8 4f fe ff ff       	call   4004a0 <puts@plt>
-	  400651:	bf 01 00 00 00       	mov    edi,0x1
-	  400656:	e8 85 fe ff ff       	call   4004e0 <exit@plt>
-	  40065b:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
-	  400662:	eb 2c                	jmp    400690 <main+0x9a>
-	  400664:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20]
-	  400668:	48 83 c0 08          	add    rax,0x8
-	  40066c:	48 8b 10             	mov    rdx,QWORD PTR [rax]
-	  40066f:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
-	  400672:	48 98                	cdqe
-	  400674:	48 01 d0             	add    rax,rdx
-	  400677:	0f b6 00             	movzx  eax,BYTE PTR [rax]
-	  40067a:	0f be c0             	movsx  eax,al
-	  40067d:	8d 50 d0             	lea    edx,[rax-0x30]
-	  400680:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
-	  400683:	48 98                	cdqe
-	  400685:	89 14 85 60 10 60 00 	mov    DWORD PTR [rax*4+0x601060],edx
-	  40068c:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
-	  400690:	83 7d fc 03          	cmp    DWORD PTR [rbp-0x4],0x3
-	  400694:	7e ce                	jle    400664 <main+0x6e>
-	  400696:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+	  4005f6:	55                   	push   rbp								;
+	  4005f7:	48 89 e5             	mov    rbp,rsp 							;
+	  4005fa:	48 83 ec 20          	sub    rsp,0x20 						; create stack
+	  4005fe:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi 		; move argc onto the stack
+	  400601:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi 		; move argv onto the stack
+	  400605:	83 7d ec 02          	cmp    DWORD PTR [rbp-0x14],0x2 		; arg checking
+	  400609:	74 23                	je     40062e <main+0x38>				; Jump if the args are valid (line 94)
+	  40060b:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20] 		;
+	  40060f:	48 8b 00             	mov    rax,QWORD PTR [rax]  			;
+	  400612:	48 89 c6             	mov    rsi,rax 							;
+	  400615:	bf 54 08 40 00       	mov    edi,0x400854 					; line 204: "Usage: %s [key]"
+	  40061a:	b8 00 00 00 00       	mov    eax,0x0 							;
+	  40061f:	e8 9c fe ff ff       	call   4004c0 <printf@plt> 				;
+	  400624:	bf 01 00 00 00       	mov    edi,0x1 							;
+	  400629:	e8 b2 fe ff ff       	call   4004e0 <exit@plt> 				; exit the program if incorrect args
+	  40062e:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20] 		; QWORD PTR [rbp-0x20] points to the key the user passes in
+	  400632:	48 83 c0 08          	add    rax,0x8 							; advance to argv[1] (the key)
+	  400636:	48 8b 00             	mov    rax,QWORD PTR [rax] 				; move the address of the key into rax
+	  400639:	48 89 c7             	mov    rdi,rax 							; put parameters into the registers (64-bit)
+	  40063c:	e8 6f fe ff ff       	call   4004b0 <strlen@plt> 				; get the string length of the key inserted
+	  400641:	48 83 f8 04          	cmp    rax,0x4 							;
+	  400645:	74 14                	je     40065b <main+0x65> 				;
+	  400647:	bf 65 08 40 00       	mov    edi,0x400865 					;
+	  40064c:	e8 4f fe ff ff       	call   4004a0 <puts@plt> 				;
+	  400651:	bf 01 00 00 00       	mov    edi,0x1 							;
+	  400656:	e8 85 fe ff ff       	call   4004e0 <exit@plt> 				; exit the program if length of input is not 4
+	  40065b:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0 			;
+	  400662:	eb 2c                	jmp    400690 <main+0x9a> 				; Start a loop [for (int i = 0; i <= 3; i++)]
+	  400664:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20] 		;
+	  400668:	48 83 c0 08          	add    rax,0x8 							;
+	  40066c:	48 8b 10             	mov    rdx,QWORD PTR [rax] 				; get the key value from the stack
+	  40066f:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4] 			;
+	  400672:	48 98                	cdqe 									;
+	  400674:	48 01 d0             	add    rax,rdx 							; get the rbp-0x4th char from the key value (key[i])
+	  400677:	0f b6 00             	movzx  eax,BYTE PTR [rax] 				;
+	  40067a:	0f be c0             	movsx  eax,al 							;
+	  40067d:	8d 50 d0             	lea    edx,[rax-0x30] 					;
+	  400680:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4] 			;
+	  400683:	48 98                	cdqe									;
+	  400685:	89 14 85 60 10 60 00 	mov    DWORD PTR [rax*4+0x601060],edx 	; unsure of what the last instructions really do
+	  40068c:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1 			; increment the loop
+	  400690:	83 7d fc 03          	cmp    DWORD PTR [rbp-0x4],0x3 			;
+	  400694:	7e ce                	jle    400664 <main+0x6e> 				; end loop if var > 3
+	  400696:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0 			; Start another loop [for (i = 0; i <= 3; i++)]
 	  40069d:	eb 39                	jmp    4006d8 <main+0xe2>
 	  40069f:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
 	  4006a2:	48 98                	cdqe
@@ -199,5 +199,41 @@ Procedure:
 	  4007c5:	e8 16 fd ff ff       	call   4004e0 <exit@plt>
 	  4007ca:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
 
-	.rodata: (grabbed from objdump -s bit_banging_0x0)
+	.rodata: (objdump -s bit_banging_0x0)
+	Contents of section .rodata:
+	  400850 01000200 55736167 653a2025 73205b6b  ....Usage: %s [k
+	  400860 65795d0a 0057726f 6e67206c 656e6774  ey]..Wrong lengt
+	  400870 68210054 6865206b 65792068 61732074  h!.The key has t
+	  400880 6f206265 2061206e 756d6265 72210043  o be a number!.C
+	  400890 6f6e6772 61747320 6d616e21 00416c6d  ongrats man!.Alm
+	  4008a0 6f737420 74686572 6521004e 6f742073  ost there!.Not s
+	  4008b0 6f206561 7379206d 61746521 00        o easy mate!.
 
+
+The reversed code: (may not be exact, just what I get from the assembly)
+	note: This is really not necessary
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+
+	int len;
+
+	if(argc != 2) {
+		printf("Usage: %s [key]", argv[0]);
+		exit(1);
+	}
+
+	len = strlen(argv[1]);
+	if (len != 4){
+		printf("Wrong length!");
+		exit(1);
+	}
+
+	for(int i = 0; i <= 3; i++){
+		//unsure of what this loop does
+	}
+
+}
